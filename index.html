@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NOCTA — Installation LED automobile à Montréal</title>
+<meta name="description" content="Éclairage LED sur mesure pour votre véhicule. Néons sous caisse, ambiance intérieure RGB, installation pro à Montréal.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2322D3EE'/%3E%3Cstop offset='100%25' stop-color='%23C026D9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230A0A0F'/%3E%3Ccircle cx='50' cy='50' r='28' fill='url(%23g)'/%3E%3C/svg%3E">
+
+<!-- Open Graph / partage réseaux sociaux -->
+<meta property="og:title" content="NOCTA — Installation LED automobile à Montréal">
+<meta property="og:description" content="Éclairage LED sur mesure pour votre véhicule. Néons sous caisse, ambiance intérieure RGB, installation pro à Montréal.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_CA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NOCTA — Installation LED automobile à Montréal">
+<meta name="twitter:description" content="Éclairage LED sur mesure pour votre véhicule. Néons sous caisse, ambiance intérieure RGB.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --void: #0A0A0F;
+    --void-soft: #13131C;
+    --panel: #1A1A26;
+    --magenta: #C026D9;
+    --cyan: #22D3EE;
+    --fog: #C9C9D6;
+    --fog-dim: #7E7E92;
+    --white: #F4F4FA;
+    --line: rgba(244,244,250,0.1);
+    --max-w: 1320px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--void);
+    color: var(--white);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Rajdhani', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    line-height: 1.05;
+    font-weight: 700;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+  /* ===== NAV ===== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .nav-logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .nav-cta {
+    background: var(--white);
+    color: var(--void);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 10px 22px;
+    border-radius: 2px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(34,211,238,0.4); }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 160px 0 110px;
+    overflow: hidden;
+  }
+  .glow-trace {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .glow-trace svg { width: 100%; height: 100%; display: block; }
+  .glow-line {
+    stroke-dasharray: 6 14;
+    animation: trace 9s linear infinite;
+  }
+  @keyframes trace {
+    to { stroke-dashoffset: -400; }
+  }
+  .glow-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    z-index: 0;
+  }
+  .blob-1 { width: 420px; height: 420px; background: var(--magenta); top: -120px; right: -100px; }
+  .blob-2 { width: 360px; height: 360px; background: var(--cyan); bottom: -160px; left: -80px; }
+
+  .hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .hero-content { max-width: 640px; }
+
+  .hero-visual {
+    position: relative;
+    height: 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .halo-group {
+    position: relative;
+    width: 340px;
+    height: 340px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+  .halo-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+  }
+  .halo-ring.r1 { width: 340px; height: 340px; }
+  .halo-ring.r2 { width: 250px; height: 250px; }
+  .halo-core {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--cyan), var(--magenta), var(--cyan));
+    filter: blur(2px);
+    animation: spin 12s linear infinite;
+    box-shadow: 0 0 90px 10px rgba(192,38,217,0.35), 0 0 60px 6px rgba(34,211,238,0.25);
+    transition: box-shadow 0.25s ease;
+  }
+  .halo-core::after {
+    content: '';
+    position: absolute;
+    inset: 18px;
+    border-radius: 50%;
+    background: var(--void);
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .hero-eyebrow {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cyan);
+  }
+  .hero-eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--cyan); }
+  .hero h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin-bottom: 24px; }
+  .hero h1 .grad {
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero p.lede { font-size: 1.12rem; color: var(--fog); max-width: 520px; margin-bottom: 38px; }
+  .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    color: var(--void);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.95rem;
+    padding: 16px 32px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(192,38,217,0.35); }
+  .btn-ghost {
+    border: 1px solid var(--line);
+    color: var(--white);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 0.95rem;
+    padding: 16px 32px;
+    border-radius: 2px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .btn-ghost:hover { border-color: var(--cyan); background: rgba(34,211,238,0.06); }
+
+  .hero-stats { display: flex; gap: 48px; margin-top: 56px; flex-wrap: wrap; }
+  .stat-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--fog-dim); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
+
+  /* ===== SERVICES ===== */
+  .section { padding: 100px 0; }
+  .section-head { max-width: 600px; margin-bottom: 56px; }
+  .section-eyebrow {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--cyan);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .section h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: var(--white); }
+
+  .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .service-card { background: var(--void-soft); padding: 40px 32px; position: relative; transition: background 0.2s ease; }
+  .service-card:hover { background: var(--panel); }
+  .service-card .tag {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: block;
+    color: var(--magenta);
+  }
+  .service-card h3 { font-size: 1.25rem; color: var(--white); margin-bottom: 14px; }
+  .service-card p { color: var(--fog-dim); font-size: 0.93rem; }
+
+  /* ===== PROCESS ===== */
+  .process { background: var(--void-soft); }
+  .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .process-list { list-style: none; display: flex; flex-direction: column; gap: 28px; }
+  .process-list li { display: flex; gap: 20px; border-top: 1px solid var(--line); padding-top: 24px; }
+  .process-list li:first-child { border-top: none; padding-top: 0; }
+  .process-list .mark {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--cyan);
+    font-weight: 700;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .process-list h4 { font-family: 'Rajdhani', sans-serif; text-transform: uppercase; font-size: 1.05rem; margin-bottom: 6px; color: var(--white); }
+  .process-list p { color: var(--fog-dim); font-size: 0.92rem; }
+
+  .install-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 40px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .install-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+  }
+  .install-card .role {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .install-card h3 { font-size: 1.5rem; margin-bottom: 18px; color: var(--white); }
+  .install-card p { color: var(--fog); font-size: 0.95rem; margin-bottom: 12px; }
+
+  /* ===== DEVIS FORM ===== */
+  .signup { position: relative; overflow: hidden; }
+  .signup .wrap { position: relative; z-index: 2; }
+  .signup-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; }
+  .signup-intro h2 { color: var(--white); margin-bottom: 18px; }
+  .signup-intro p { color: var(--fog); font-size: 1.02rem; max-width: 420px; }
+
+  .signup-points { margin-top: 32px; display: flex; flex-direction: column; gap: 14px; }
+  .signup-points div { display: flex; gap: 12px; align-items: flex-start; font-size: 0.92rem; color: var(--fog); }
+  .signup-points .dot { width: 6px; height: 6px; background: var(--magenta); border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+
+  .form-card { background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 44px; }
+  .form-row { margin-bottom: 20px; }
+  .form-row label {
+    display: block;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--fog);
+  }
+  .form-row input, .form-row select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    background: var(--void-soft);
+    color: var(--white);
+  }
+  .form-row input:focus, .form-row select:focus {
+    outline: 2px solid var(--cyan);
+    outline-offset: 1px;
+    border-color: var(--cyan);
+  }
+  .form-row select option { background: var(--void-soft); }
+  .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .submit-btn { width: 100%; margin-top: 8px; }
+  .form-note { font-size: 0.8rem; color: var(--fog-dim); margin-top: 14px; text-align: center; }
+
+  #form-status { margin-top: 16px; font-size: 0.9rem; font-weight: 600; display: none; }
+  #form-status.success { color: var(--cyan); display: block; }
+  #form-status.error { color: #F2607A; display: block; }
+
+  /* ===== FOOTER ===== */
+  footer { background: var(--void-soft); padding: 48px 0 32px; border-top: 1px solid var(--line); }
+  .footer-grid {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 24px; border-bottom: 1px solid var(--line);
+    padding-bottom: 32px; margin-bottom: 24px;
+  }
+  .footer-logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .footer-links { display: flex; gap: 28px; flex-wrap: wrap; font-size: 0.88rem; color: var(--fog); }
+  .footer-bottom { font-size: 0.8rem; color: var(--fog-dim); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  @media (max-width: 1020px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { height: 260px; }
+    .halo-ring.r1 { width: 220px; height: 220px; }
+    .halo-ring.r2 { width: 160px; height: 160px; }
+    .halo-core { width: 100px; height: 100px; }
+  }
+
+  @media (max-width: 880px) {
+    .service-grid { grid-template-columns: 1fr; }
+    .process-grid { grid-template-columns: 1fr; gap: 40px; }
+    .signup-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-grid-2 { grid-template-columns: 1fr; }
+    .hero { padding: 130px 0 70px; }
+    .hero-stats { gap: 32px; }
+    .form-card { padding: 28px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+  }
+
+  :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="#top" class="nav-logo">NOCTA</a>
+    <a href="#devis" class="nav-cta">Demander un devis</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="glow-blob blob-1" aria-hidden="true"></div>
+  <div class="glow-blob blob-2" aria-hidden="true"></div>
+  <div class="glow-trace" aria-hidden="true">
+    <svg viewBox="0 0 1180 700" preserveAspectRatio="xMidYMid slice">
+      <path class="glow-line" d="M -50 600 C 300 500, 500 650, 900 500 S 1300 350, 1250 200" fill="none" stroke="#22D3EE" stroke-width="1.5" opacity="0.6"/>
+      <path class="glow-line" d="M -50 150 C 250 250, 600 80, 950 200 S 1250 450, 1300 600" fill="none" stroke="#C026D9" stroke-width="1.5" opacity="0.5" style="animation-delay: -3s;"/>
+    </svg>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Installation LED automobile — Montréal</div>
+      <h1>Votre voiture mérite une <span class="grad">signature lumineuse</span></h1>
+      <p class="lede">NOCTA installe des éclairages LED sur mesure — ambiance intérieure RGB, néons sous caisse, accents extérieurs. Du matériel pro, posé par des installateurs qui savent ce qu'ils font.</p>
+      <div class="hero-actions">
+        <a href="#devis" class="btn-primary">Demander un devis</a>
+        <a href="#services" class="btn-ghost">Voir les installations</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">3</div>
+          <div class="stat-label">Types d'installation</div>
+        </div>
+        <div>
+          <div class="stat-num">90min</div>
+          <div class="stat-label">Installation moyenne</div>
+        </div>
+        <div>
+          <div class="stat-num">12 mois</div>
+          <div class="stat-label">Garantie pièces</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" id="hero-visual" aria-hidden="true">
+      <div class="halo-group" id="halo-group">
+        <div class="halo-ring r1"></div>
+        <div class="halo-ring r2"></div>
+        <div class="halo-core"></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-eyebrow">Les installations</div>
+      <h2>Trois façons de transformer votre véhicule</h2>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="tag">Intérieur</span>
+        <h3>Ambiance RGB cabine</h3>
+        <p>Bandes LED synchronisées, contrôle via app mobile, des millions de couleurs pour habiller l'intérieur à votre goût.</p>
+      </div>
+      <div class="service-card">
+        <span class="tag">Extérieur</span>
+        <h3>Néons sous caisse</h3>
+        <p>Éclairage sous le véhicule, étanche et résistant à la route, avec contrôleur pour ajuster intensité et couleur.</p>
+      </div>
+      <div class="service-card">
+        <span class="tag">Accents</span>
+        <h3>Calandre &amp; jantes</h3>
+        <p>Touches lumineuses ciblées sur la calandre ou les jantes pour une signature visuelle discrète mais marquante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section process">
+  <div class="wrap">
+    <div class="process-grid">
+      <div>
+        <div class="section-eyebrow">Le déroulement</div>
+        <h2 style="color: var(--white); margin-bottom: 32px;">De la prise de rendez-vous à l'installation</h2>
+        <ul class="process-list">
+          <li>
+            <span class="mark">Devis</span>
+            <div>
+              <h4>Évaluation du véhicule</h4>
+              <p>Vous décrivez ce que vous voulez, on vous propose la config adaptée à votre modèle et votre budget.</p>
+            </div>
+          </li>
+          <li>
+            <span class="mark">Rendez-vous</span>
+            <div>
+              <h4>Installation sur place</h4>
+              <p>Pose professionnelle, câblage propre et dissimulé, test complet avant remise des clés.</p>
+            </div>
+          </li>
+          <li>
+            <span class="mark">Suivi</span>
+            <div>
+              <h4>Garantie incluse</h4>
+              <p>Pièces et installation couvertes 12 mois — un souci, on s'en occupe.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="install-card">
+        <div class="role">À propos de NOCTA</div>
+        <h3>Installation pro, matériel sérieux</h3>
+        <p>NOCTA installe des kits LED automobiles à Montréal, avec un focus sur la qualité du câblage et la discrétion de la pose — pas de fils qui pendent, pas de bricolage visible.</p>
+        <p>Chaque installation est testée en conditions réelles avant la remise du véhicule, et accompagnée d'une garantie de 12 mois sur les pièces posées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section signup" id="devis">
+  <div class="wrap">
+    <div class="signup-grid">
+      <div class="signup-intro">
+        <div class="section-eyebrow">Devis gratuit</div>
+        <h2>Prêt à donner un nouveau look à votre voiture ?</h2>
+        <p>Remplissez le formulaire avec les infos de votre véhicule. Vous recevrez un devis personnalisé par courriel.</p>
+        <div class="signup-points">
+          <div><span class="dot"></span> Devis sans engagement</div>
+          <div><span class="dot"></span> Réponse rapide, généralement sous 24h</div>
+          <div><span class="dot"></span> Installation à Montréal et environs</div>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <form id="signup-form">
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="firstName">Prénom</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-row">
+              <label for="lastName">Nom</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Courriel</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">Téléphone <span style="color: var(--fog-dim); text-transform: none; font-weight: 400;">(optionnel)</span></label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="vehicle">Marque et modèle</label>
+              <input type="text" id="vehicle" name="vehicle" placeholder="Ex : Honda Civic 2021" required>
+            </div>
+            <div class="form-row">
+              <label for="installType">Type d'installation</label>
+              <select id="installType" name="installType" required>
+                <option value="">Choisir...</option>
+                <option value="interieur">Ambiance RGB intérieure</option>
+                <option value="exterieur">Néons sous caisse</option>
+                <option value="accents">Calandre / jantes</option>
+                <option value="combo">Combinaison de plusieurs</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary submit-btn" id="submit-btn">Envoyer ma demande</button>
+          <div id="form-status"></div>
+          <p class="form-note">Vos informations servent uniquement à préparer votre devis. En soumettant ce formulaire, vous acceptez notre <a href="privacy.html" style="color: var(--cyan); text-decoration: underline;">politique de confidentialité</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-logo">NOCTA</div>
+      <div class="footer-links">
+        <a href="#services">Installations</a>
+        <a href="#devis">Devis</a>
+        <a href="privacy.html">Politique de confidentialité</a>
+        <a href="terms.html">Conditions d'utilisation</a>
+        <a href="mailto:contact@nocta-led.ca">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 NOCTA — Installation LED automobile, Montréal</span>
+      <span>Site fictif — exemple de démonstration</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ⚠️ IMPORTANT : remplace cette URL par ton vrai webhook Make
+  const MAKE_WEBHOOK_URL = "https://hook.us2.make.com/05kqo6dmo109prd8h19i7psagy5mjjh8";
+
+  const form = document.getElementById('signup-form');
+  const statusDiv = document.getElementById('form-status');
+  const submitBtn = document.getElementById('submit-btn');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const data = {
+      firstName: document.getElementById('firstName').value,
+      lastName: document.getElementById('lastName').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      vehicle: document.getElementById('vehicle').value,
+      installType: document.getElementById('installType').value,
+      submittedAt: new Date().toISOString()
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Envoi en cours...";
+    statusDiv.className = '';
+    statusDiv.style.display = 'none';
+
+    try {
+      const response = await fetch(MAKE_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (!response.ok) throw new Error('Erreur réseau');
+
+      statusDiv.textContent = "Demande envoyée ! Vous recevrez votre devis par courriel.";
+      statusDiv.className = 'success';
+      form.reset();
+    } catch (err) {
+      statusDiv.textContent = "Une erreur est survenue. Réessayez ou contactez-nous directement.";
+      statusDiv.className = 'error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Envoyer ma demande";
+    }
+  });
+
+  // Halo LED — suit légèrement le curseur, avec amortissement
+  (function () {
+    const visual = document.getElementById('hero-visual');
+    const halo = document.getElementById('halo-group');
+    if (!visual || !halo) return;
+
+    const maxOffset = 22; // déplacement maximal en pixels — volontairement subtil
+    let targetX = 0, targetY = 0;
+    let currentX = 0, currentY = 0;
+    let raf = null;
+
+    function onMove(e) {
+      const rect = visual.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / (rect.width / 2);
+      const dy = (e.clientY - cy) / (rect.height / 2);
+      targetX = Math.max(-1, Math.min(1, dx)) * maxOffset;
+      targetY = Math.max(-1, Math.min(1, dy)) * maxOffset;
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+
+    function onLeave() {
+      targetX = 0;
+      targetY = 0;
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+
+    function tick() {
+      // amortissement (lerp) pour un mouvement fluide, pas un suivi brutal
+      currentX += (targetX - currentX) * 0.12;
+      currentY += (targetY - currentY) * 0.12;
+      halo.style.transform = `translate(${currentX.toFixed(2)}px, ${currentY.toFixed(2)}px)`;
+
+      if (Math.abs(targetX - currentX) > 0.05 || Math.abs(targetY - currentY) > 0.05) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = null;
+      }
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isTouch = window.matchMedia('(hover: none)').matches;
+
+    if (!reduceMotion && !isTouch) {
+      window.addEventListener('mousemove', onMove);
+      visual.addEventListener('mouseleave', onLeave);
+    }
+  })();
+</script>
+
+</body>
+</html>
