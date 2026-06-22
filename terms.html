@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conditions d'utilisation — NOCTA</title>
+<meta name="description" content="Conditions d'utilisation et mentions légales de NOCTA, service d'installation LED automobile à Montréal.">
+<meta name="robots" content="noindex">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2322D3EE'/%3E%3Cstop offset='100%25' stop-color='%23C026D9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%230A0A0F'/%3E%3Ccircle cx='50' cy='50' r='28' fill='url(%23g)'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --void: #0A0A0F;
+    --void-soft: #13131C;
+    --panel: #1A1A26;
+    --magenta: #C026D9;
+    --cyan: #22D3EE;
+    --fog: #C9C9D6;
+    --fog-dim: #7E7E92;
+    --white: #F4F4FA;
+    --line: rgba(244,244,250,0.1);
+    --max-w: 820px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--void);
+    color: var(--white);
+    line-height: 1.6;
+  }
+
+  a { color: var(--cyan); text-decoration: underline; }
+  a:hover { color: var(--magenta); }
+
+  .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+
+  .nav {
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1320px; }
+  .nav-logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, var(--cyan), var(--magenta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-decoration: none;
+  }
+  .nav-back {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--fog);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-back:hover { color: var(--cyan); }
+
+  .doc-header { padding: 64px 0 40px; border-bottom: 1px solid var(--line); }
+  .doc-eyebrow {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--cyan);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .doc-header h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 14px;
+  }
+  .doc-updated { color: var(--fog-dim); font-size: 0.9rem; }
+
+  .doc-body { padding: 48px 0 100px; }
+  .doc-body h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 0.01em;
+    color: var(--white);
+    margin-top: 48px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .doc-body h2:first-child { margin-top: 0; }
+  .doc-body p { color: var(--fog); margin-bottom: 16px; font-size: 0.97rem; }
+  .doc-body ul { color: var(--fog); margin: 0 0 16px 0; padding-left: 22px; font-size: 0.97rem; }
+  .doc-body li { margin-bottom: 8px; }
+  .doc-body strong { color: var(--white); font-weight: 600; }
+
+  .info-box {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    position: relative;
+  }
+  .info-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--cyan), var(--magenta));
+  }
+  .info-box p:last-child { margin-bottom: 0; }
+
+  .contact-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 28px;
+    margin-top: 24px;
+  }
+  .contact-card .role {
+    font-family: 'Rajdhani', sans-serif;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .contact-card p { margin-bottom: 6px; }
+
+  .toc-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; margin: 32px 0; }
+  .toc-list a {
+    color: var(--fog);
+    text-decoration: none;
+    font-size: 0.92rem;
+    display: flex;
+    gap: 10px;
+  }
+  .toc-list a:hover { color: var(--cyan); }
+  .toc-list .num { color: var(--cyan); font-family: 'Rajdhani', sans-serif; font-weight: 600; flex-shrink: 0; }
+
+  footer { border-top: 1px solid var(--line); padding: 32px 0; }
+  .footer-bottom {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+    font-size: 0.8rem;
+    color: var(--fog-dim);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .doc-header { padding: 48px 0 32px; }
+    .doc-body { padding: 36px 0 70px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  :focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-logo">NOCTA</a>
+    <a href="index.html" class="nav-back">← Retour au site</a>
+  </div>
+</nav>
+
+<header class="doc-header">
+  <div class="wrap">
+    <div class="doc-eyebrow">Conditions &amp; mentions légales</div>
+    <h1>Conditions d'utilisation</h1>
+    <p class="doc-updated">Dernière mise à jour : 22 juin 2026</p>
+  </div>
+</header>
+
+<main class="doc-body">
+  <div class="wrap">
+
+    <p>Les présentes conditions d'utilisation (les « Conditions ») encadrent l'utilisation du site web de NOCTA ainsi que les services de demande de devis et d'installation d'éclairage LED automobile offerts par l'entreprise. En utilisant ce site ou en soumettant une demande de devis, vous acceptez les présentes Conditions.</p>
+
+    <ul class="toc-list">
+      <li><a href="#identification"><span class="num">01</span> Identification de l'entreprise</a></li>
+      <li><a href="#services"><span class="num">02</span> Nature des services</a></li>
+      <li><a href="#devis"><span class="num">03</span> Demandes de devis</a></li>
+      <li><a href="#rendezvous"><span class="num">04</span> Rendez-vous et annulation</a></li>
+      <li><a href="#garantie"><span class="num">05</span> Garantie</a></li>
+      <li><a href="#responsabilite"><span class="num">06</span> Limitation de responsabilité</a></li>
+      <li><a href="#propriete"><span class="num">07</span> Propriété intellectuelle</a></li>
+      <li><a href="#droit"><span class="num">08</span> Droit applicable</a></li>
+      <li><a href="#modifications"><span class="num">09</span> Modifications</a></li>
+      <li><a href="#contact"><span class="num">10</span> Nous contacter</a></li>
+    </ul>
+
+    <h2 id="identification">01. Identification de l'entreprise</h2>
+    <div class="contact-card">
+      <p><strong>Nom commercial :</strong> NOCTA</p>
+      <p><strong>Nom légal :</strong> [à compléter — raison sociale exacte de l'entreprise]</p>
+      <p><strong>Numéro d'entreprise du Québec (NEQ) :</strong> [à compléter]</p>
+      <p><strong>Adresse :</strong> [à compléter]</p>
+      <p><strong>Courriel :</strong> <a href="mailto:contact@nocta-led.ca">contact@nocta-led.ca</a></p>
+    </div>
+    <p style="margin-top: 16px;">NOCTA est un service fictif créé à des fins de démonstration. Les renseignements ci-dessus doivent être complétés avec les véritables informations légales avant toute mise en ligne réelle.</p>
+
+    <h2 id="services">02. Nature des services</h2>
+    <p>NOCTA offre des services d'installation d'éclairage LED pour véhicules automobiles, incluant notamment :</p>
+    <ul>
+      <li>Installation d'éclairage d'ambiance RGB intérieur</li>
+      <li>Installation de néons sous caisse</li>
+      <li>Installation d'accents lumineux sur calandre et jantes</li>
+    </ul>
+    <p>Le site web sert à présenter ces services et à recueillir des demandes de devis. Aucune transaction financière n'est effectuée directement sur le site.</p>
+
+    <h2 id="devis">03. Demandes de devis</h2>
+    <p>Le formulaire de demande de devis disponible sur ce site permet d'obtenir une estimation préliminaire en fonction des renseignements fournis (marque, modèle du véhicule, type d'installation souhaité).</p>
+    <div class="info-box">
+      <p>Un devis transmis suite à une demande est une <strong>estimation</strong> et non un engagement contractuel final. Le prix exact peut varier après inspection du véhicule en personne, selon sa configuration réelle et l'état du câblage existant.</p>
+    </div>
+    <p>La soumission d'une demande de devis ne crée aucune obligation d'achat pour le client, ni aucune obligation de fournir le service pour NOCTA avant la confirmation d'un rendez-vous.</p>
+
+    <h2 id="rendezvous">04. Rendez-vous et annulation</h2>
+    <p>Une fois un devis accepté, un rendez-vous d'installation est planifié avec le client. Les conditions suivantes s'appliquent :</p>
+    <ul>
+      <li>Toute annulation doit être communiquée au moins 24 heures avant le rendez-vous prévu</li>
+      <li>Un retard important du client le jour du rendez-vous peut entraîner un report à une date ultérieure</li>
+      <li>Le client doit s'assurer que le véhicule est accessible et dans un état permettant l'installation prévue</li>
+    </ul>
+
+    <h2 id="garantie">05. Garantie</h2>
+    <p>Toute installation effectuée par NOCTA est couverte par une garantie de <strong>12 mois</strong> sur les pièces installées, à compter de la date d'installation. Cette garantie couvre :</p>
+    <ul>
+      <li>Les défauts de fabrication des composants LED installés</li>
+      <li>Les défauts de câblage liés directement à l'installation effectuée par NOCTA</li>
+    </ul>
+    <p>Cette garantie <strong>ne couvre pas</strong> :</p>
+    <ul>
+      <li>Les dommages causés par une intervention ultérieure d'un tiers sur le système installé</li>
+      <li>Les dommages résultant d'un accident, d'un usage abusif ou de conditions environnementales extrêmes</li>
+      <li>L'usure normale des composants au-delà de la période de garantie</li>
+    </ul>
+
+    <h2 id="responsabilite">06. Limitation de responsabilité</h2>
+    <p>NOCTA s'engage à effectuer ses installations avec soin et selon les pratiques courantes du métier. Dans la mesure permise par la loi :</p>
+    <ul>
+      <li>NOCTA n'est pas responsable des problèmes mécaniques ou électriques préexistants du véhicule, non liés à l'installation effectuée</li>
+      <li>La responsabilité de NOCTA, en cas de dommage directement causé par une installation défectueuse, se limite au coût de réparation ou de remplacement de l'installation concernée</li>
+      <li>NOCTA n'est pas responsable des dommages indirects ou consécutifs (par exemple, perte de jouissance du véhicule pendant une réparation)</li>
+    </ul>
+    <p>Rien dans les présentes Conditions ne vise à exclure ou limiter une responsabilité qui ne peut être exclue ou limitée en vertu du droit québécois applicable, notamment en matière de protection du consommateur.</p>
+
+    <h2 id="propriete">07. Propriété intellectuelle</h2>
+    <p>Le contenu de ce site (textes, visuels, logo) est la propriété de NOCTA et ne peut être reproduit sans autorisation écrite préalable, sauf dans la mesure permise par la loi (par exemple, à des fins de citation ou de critique).</p>
+
+    <h2 id="droit">08. Droit applicable</h2>
+    <p>Les présentes Conditions sont régies par les lois de la province de Québec et les lois fédérales du Canada applicables. Tout différend sera soumis aux tribunaux compétents du district judiciaire où est situé le siège de l'entreprise.</p>
+    <p>Conformément à la <strong>Loi sur la protection du consommateur</strong> du Québec, les présentes Conditions ne portent pas atteinte aux droits dont bénéficie un consommateur en vertu de cette loi.</p>
+
+    <h2 id="modifications">09. Modifications</h2>
+    <p>NOCTA peut modifier les présentes Conditions à tout moment. Les modifications entrent en vigueur dès leur publication sur cette page. La date de dernière mise à jour est indiquée en haut de cette page.</p>
+
+    <h2 id="contact">10. Nous contacter</h2>
+    <p>Pour toute question concernant ces conditions ou un service en cours, vous pouvez nous contacter :</p>
+    <div class="contact-card">
+      <div class="role">Service à la clientèle</div>
+      <p><strong>NOCTA</strong></p>
+      <p>Courriel : <a href="mailto:contact@nocta-led.ca">contact@nocta-led.ca</a></p>
+      <p>Téléphone : [à compléter par l'entreprise]</p>
+    </div>
+
+    <p style="margin-top: 32px; font-size: 0.85rem; color: var(--fog-dim);">Pour les questions relatives à la collecte et l'utilisation de vos renseignements personnels, consultez notre <a href="privacy.html">politique de confidentialité</a>.</p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-bottom">
+    <span>© 2026 NOCTA — Installation LED automobile, Montréal</span>
+    <span>Site fictif — exemple de démonstration</span>
+  </div>
+</footer>
+
+</body>
+</html>
